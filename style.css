@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout */
+body {
+    font-family: "Work Sans", serif;
+    font-size: 1em;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    margin: 50px;
+    text-align: center;
+}
+
+#sw1 {
+    float: left;
+}
+
+#sw2 {
+    float: right;
+}
+
+/* ------------ Smartphones --------------- */
+
+/* Cabeçalho */
+header h1 {
+    color: #cc470d;
+    text-align: center;
+    padding: 25px 0px;
+}
+
+/* menu */
+nav {
+    width: 100%;
+}
+nav ul {
+    list-style: none;
+    background-color: #e15a1f;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    background-color: #cc470d;
+} 
+
+/* Rodapé */
+
+footer {
+    width: 100%;
+    background-color: #e15a1f;
+    padding: 15px 0px ;
+    font-size: 0.9em;
+    text-align: center;
+    color: #fff;
+}
+
+
+
+
+/* ----------Tablets / Pcs / Notebooks ------------ */
+
+@media (min-width: 576px) {
+    #sw1, #sw2 {
+        float: none;
+    }
+}
