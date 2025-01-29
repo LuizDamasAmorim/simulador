@@ -12,6 +12,11 @@ let sw2 = false
 // A Váriavel abaixo e usada para identificar de a lâmpada está quebrada 
 let broken = false
 
+// A linha abaixo cria uma variável que identifica a pagina HTML
+let path = window.location.pathname
+alert(path)
+// 
+
 function sw(recive) {
     // console.log(recive) // Apoio a lógica 
 
@@ -34,7 +39,7 @@ function sw(recive) {
         sw2 = false
     }
 
-    // Lógica para qubrar a lâmpada
+    // Lógica para quebrar a lâmpada
     if (recive === 3) {
         // A linha abaixo cria um objeto usando a classe Audio
         let som = new Audio()
@@ -47,8 +52,10 @@ function sw(recive) {
         broken = true
     }
 
+
+    // Se estiver na pagina AND e a lampada naõ estiver quebrada
+    if (path === '/and.html' && broken !== true) {
     // Lógica para o operador AND
-    if (broken !== true) {
         if (sw1 === true && sw2 === true) {
             document.getElementById('lamp').src = "img/on.jpg"
         } 
@@ -56,4 +63,26 @@ function sw(recive) {
             document.getElementById('lamp').src = "img/off.jpg"
         }
     } 
+
+    // Se estiver na pagina OR e a lampada naõ estiver quebrada, se quebrar a lâmpada, nada mais acende
+    if (path === '/or.html' && broken !== true) {
+        // Lógica para o operador OR
+            if (sw1 === true || sw2 === true) {
+                document.getElementById('lamp').src = "img/on.jpg"
+            } 
+            else {
+                document.getElementById('lamp').src = "img/off.jpg"
+            }
+        }
+        
+        // Se estiver na pagina NOT e a lampada naõ estiver quebrada, se quebrar a lâmpada, nada mais acende
+    if (path === '/not.html' && broken !== true) {
+        // Lógica para o operador NOT
+            if (!sw1) {
+                document.getElementById('lamp').src = "img/on.jpg"
+            } 
+            else {
+                document.getElementById('lamp').src = "img/off.jpg"
+            }
+        }
 }
